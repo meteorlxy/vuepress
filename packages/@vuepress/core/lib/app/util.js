@@ -16,9 +16,27 @@ export function getPageAsyncComponent (pageKey) {
   return pageComponents[pageKey]
 }
 
-export function isLayoutExists (layout) {
-  return Boolean(layoutComponents[layout])
+export function cached (fn) {
+  const cache = Object.create(null)
+  return function cachedFn (str) {
+    return str in cache ? cache[str] : (cache[str] = fn(str))
+  }
 }
+
+export const isLayoutExists = cached(layout => {
+  if (typeof layoutComponents !== 'string') {
+    return false
+  }
+  if (layoutComponents[layout]) {
+    return true
+  }
+  const camelizeLayout = layout.replace(/-(\w)/g, (_, c) => c ? c.toUpperCase() : '')
+  if (layoutComponents[camelizeLayout]) {
+    return true
+  }
+  const PascalCaseLayout = camelizeLayout.charAt(0).toUpperCase() + camelizeLayout.slice(1)
+  return Boolean(layoutComponents[PascalCaseLayout])
+})
 
 export function isLayoutLoaded (layout) {
   return Boolean(Vue.component(layout))
