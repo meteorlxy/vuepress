@@ -27,6 +27,9 @@
     "show-help": "vuepress --help",
     "view-info": "vuepress view-info docs --temp .temp"
   },
+  "dependencies": {
+    "vuepress-plugin-named-chunks": "^1.0.2"
+  },
   "devDependencies": {
     "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.7",
     "@vuepress/plugin-back-to-top": "^1.2.0",

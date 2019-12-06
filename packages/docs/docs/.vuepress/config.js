@@ -87,7 +87,10 @@ module.exports = ctx => ({
       before: info => `<UpgradePath title="${info}">`,
       after: '</UpgradePath>'
     }],
-    ['flowchart']
+    ['flowchart'],
+    ['named-chunks', {
+      // layoutChunkName: layout => 'layout-' + layout.componentName
+    }]
   ],
   extraWatchFiles: [
     '.vuepress/nav/en.js',

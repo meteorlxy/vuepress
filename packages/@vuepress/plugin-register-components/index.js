@@ -24,7 +24,7 @@ module.exports = (options, context) => ({
     const baseDirs = Array.isArray(componentsDir) ? componentsDir : [componentsDir]
 
     function importCode (name, absolutePath) {
-      return `Vue.component(${JSON.stringify(name)}, () => import(${JSON.stringify(absolutePath)}))`
+      return `Vue.component(${JSON.stringify(name)}, () => import(/* webpackChunkName: ${JSON.stringify(`component-${name}`)} */${JSON.stringify(absolutePath)}))`
     }
 
     function genImport (baseDir, file) {

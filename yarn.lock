@@ -13314,6 +13314,11 @@ vuepress-plugin-flowchart@^1.4.2:
   dependencies:
     flowchart.js "^1.11.3"
 
+vuepress-plugin-named-chunks@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-named-chunks/-/vuepress-plugin-named-chunks-1.0.2.tgz#0f201c4ea0df0baba6978895c8f46486216865c2"
+  integrity sha512-U7Ufi2ZjkXdlAORzIliK+4YY29nfqwYZ4AvSPCov7oyi1Pf5YZNDjrqoeJSVqll649RUhSgGS7HthY8HQMgs1w==
+
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.3.tgz#6eff2d4c186cca917cc9f7df2b0af7de7c8c6438"
